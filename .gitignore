@@ -2,17 +2,78 @@
 .env
 *.json
 service-account*.json
+credentials/
 
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
 .venv/
 venv/
+env/
+ENV/
+
+# UV (Python package manager)
+.uv/
+uv.lock
+
+# ChromaDB
+chroma_db/
+*.sqlite3
+
+# Jupyter
+*.ipynb_checkpoints
+testes.ipynb
+test_*.ipynb
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Development files
+test_*.py
+*_test.py
+quick_*.py
+debug_*.py
