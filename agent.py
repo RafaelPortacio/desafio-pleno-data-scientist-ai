@@ -128,8 +128,8 @@ class DataAnalystAgent:
             raise ValueError("OPENAI_API_KEY não encontrada no arquivo .env")
         
         return ChatOpenAI(
-            model="gpt-4o-mini",
-            temperature=0,
+            model="gpt-5",
+            temperature=1,
             api_key=api_key
         )
     
@@ -274,7 +274,7 @@ class DataAnalystAgent:
         3. Se mencionar nomes de bairros, faça JOIN com a tabela de bairros
         4. O SQL gerado será executado imediatamente, não adicione explicações ou comentários
         5. O subtipo é subordinado ao tipo, prefira usar o tipo para filtrar primeiro e se não for o suficiente, use o subtipo para refinar a busca
-        6. Evite usar queries com LIKE, prefira usar as tools para encontrar o valor exato (Por exemplo, se a pergunta for encontre subtipos relacionados a "Regras de Trânsito" O caminho natural é usar a tool get_tipo para encontrar o tipo exato para filtrar ele na query ao invés de usar LIKE)
+        6. Evite usar queries com LIKE, elas são extremamente, as tools são para encontrar o valor exato correto (Por exemplo, se a pergunta for encontre subtipos relacionados a "Regras de Trânsito" use a tool get_tipo para encontrar o tipo exato para filtrar pelo nome dele na query, caso não haja NENHUM adequado, aí procure por subtipos relacionados e filtre por eles)
         
         {agent_scratchpad}
 
