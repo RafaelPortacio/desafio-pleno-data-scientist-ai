@@ -32,11 +32,6 @@ GOOGLE_APPLICATION_CREDENTIALS=service-account-key.json
 python agent.py
 ```
 
-**Teste detalhado:**
-```bash
-python test_agent.py
-```
-
 **Uso no código:**
 ```python
 from agent import DataAnalystAgent
@@ -58,15 +53,13 @@ O agente responde perguntas como:
 
 O agente usa LangGraph com 4 nós principais:
 1. **Router**: Classifica se a pergunta precisa de dados
-2. **Gerador SQL**: Cria consultas otimizadas para BigQuery  
+2. **Gerador SQL (RAG Agent)**: Cria consultas otimizadas para BigQuery  
 3. **Executor**: Executa a consulta e trata erros
 4. **Sintetizador**: Converte dados em resposta natural
 
----
+## Diferenciais da abordagem
 
-# Desafio Técnico Original
-
-Bem-vindo(a) ao desafio técnico para a vaga de Pessoa Cientista de Dados Pleno no nosso time de transformação digital, focado em criar soluções inovadoras para a cidade do Rio de Janeiro!
+Além dos requisitos padrão, percebi que um dos problemas era identificar nomes exatos de variáveis categóricas que tinham múltiplas opções, como tipo de chamado. Para lidar com isso, desenvolvi um RAG em chromaDB usando embeddings gerados pela OpenAI.
 
 ## 🚀 Configuração e Instalação
 
