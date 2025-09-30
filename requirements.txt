@@ -1,0 +1,15 @@
+# Dependências principais
+pydantic==2.9.2
+langchain-core
+langgraph==0.6.5
+langchain-openai==0.2.9
+google-cloud-bigquery==3.27.0
+pandas==2.2.3
+python-dotenv==1.0.1
+db-dtypes
+requests==2.31.0
+numpy<2.0
+
+# Embeddings e busca vetorial
+chromadb==0.4.24
+httpx==0.25.2

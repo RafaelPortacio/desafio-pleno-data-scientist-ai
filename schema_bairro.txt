@@ -1,0 +1,39 @@
+bairro:
+  colunas_identificacao:
+    id_bairro: Identificador único do bairro (integer)
+    nome: Nome oficial do bairro (string)
+      exemplos:
+        - Copacabana
+        - Madureira
+        - Méier
+  colunas_planejamento:
+    id_area_planejamento: Identificador da área de planejamento (integer)
+    id_regiao_planejamento: Código da região de planejamento (string/decimal, ex: "1.1")
+    nome_regiao_planejamento: Nome da região de planejamento (string)
+      exemplos:
+        - Madureira
+        - Zona Sul
+        - Méier
+        - Centro
+        - Ilha do Governador
+  colunas_administracao:
+    id_regiao_administrativa: Identificador da região administrativa (integer)
+    nome_regiao_administrativa: Nome da região administrativa (string)
+      exemplos:
+        - Méier
+        - Ilha do Governador
+        - Madureira
+        - Jacarepaguá
+        - Barra da Tijuca
+    subprefeitura: Nome da subprefeitura responsável (string)
+      exemplos:
+        - Zona Norte
+        - Zona Sul
+        - Centro
+        - Ilhas
+        - Zona Oeste
+  colunas_geometria:
+    area: Área do bairro em metros quadrados (float)
+    perimetro: Perímetro do bairro em metros (float)
+    geometry_wkt: Geometria no formato WKT (Well-Known Text)
+    geometry: Geometria no formato binário/geojson

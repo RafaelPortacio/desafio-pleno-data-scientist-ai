@@ -1,0 +1,108 @@
+chamado:
+  colunas_identificacao:
+    id_chamado: Identificador único do chamado (integer; não incluir exemplos)
+    id_origem_ocorrencia: Código da origem da ocorrência (integer). Mapeamento externo necessário
+
+  colunas_tempo:
+    data_inicio: Data e hora em que o chamado foi aberto. Formato: "YYYY-MM-DD HH:MM:SS" (timestamp)
+    data_fim: Data e hora em que o chamado foi encerrado. Formato: "YYYY-MM-DD HH:MM:SS" (timestamp)
+    data_alvo_diagnostico: Data alvo para diagnóstico (se existir). Formato: "YYYY-MM-DD HH:MM:SS"
+    data_real_diagnostico: Data em que o diagnóstico realmente ocorreu. Formato: "YYYY-MM-DD HH:MM:SS"
+    data_alvo_finalizacao: Data alvo para finalização (se existir). Formato: "YYYY-MM-DD HH:MM:SS"
+    data_particao: Data de referência para particionamento da base. Formato: "YYYY-MM-DD"
+
+  colunas_localizacao:
+    id_bairro: ID do bairro (integer)
+    id_territorialidade: ID da região administrativa (integer)
+    id_logradouro: ID do logradouro (integer)
+    numero_logradouro: Número no logradouro (integer; 0 indica sem número)
+    latitude: Coordenada latitude (float, WGS84)
+    longitude: Coordenada longitude (float, WGS84)
+
+  colunas_organizacao:
+    id_unidade_organizacional: ID da unidade responsável (integer)
+    nome_unidade_organizacional:
+      Nome da unidade responsável — valores observados (úteis para classificação/roteamento)
+      exemplos:
+        - Ouvidoria COMLURB
+        - Ouvidoria SECONSERVA
+        - Ouvidoria GM-RIO
+        - Ouvidoria RIOLUZ
+        - Ouvidoria SMS/CAP3.3
+    id_unidade_organizacional_mae:
+      Unidade organizacional mãe (string/nome)
+      exemplos:
+        - Ouvidoria Geral
+        - Ouvidoria SEGOVI
+    unidade_organizacional_ouvidoria:
+      Indica se a unidade é área de ouvidoria (boolean)
+      exemplos:
+        - true
+        - false
+
+  colunas_classificacao:
+    categoria:
+      Categoria do chamado (categórica)
+      exemplos:
+        - Reclamação
+        - Crítica
+        - Sugestão
+    id_tipo: ID do tipo (integer)
+    tipo:
+      Tipo do serviço (text)
+      exemplos:
+        - Clínicas da Família (CF)
+        - Iluminação Pública
+        - Sistema Nacional de Regulação (SISREG)
+        - Pavimentação
+        - Manejo Arbóreo
+    id_subtipo: ID do subtipo (integer)
+    subtipo:
+      Descrição do subtipo (text)
+      exemplos:
+        - Reparo de lâmpada apagada
+        - Reparo de buraco, deformação ou afundamento na pista
+        - Fiscalização de perturbação do sossego
+        - Fiscalização de estacionamento irregular de veículo
+        - Remoção de entulho e bens inservíveis
+
+  colunas_status:
+    status_chamado:
+      Estado do chamado (texto)
+      exemplos:
+        - Fechado com informação
+        - Fechado com solução
+        - Fechado com providências
+        - Cancelado
+    situacao:
+      Situação geral do processo
+      exemplos:
+        - Encerrado
+    tipo_situacao:
+      Detalhe da situação (resultado)
+      exemplos:
+        - Atendido parcialmente
+        - Atendido
+        - Não atendido
+    dentro_prazo:
+      Indica conformidade com SLA
+      exemplos:
+        - No prazo
+        - Fora do prazo
+    prazo_unidade:
+      Unidade do prazo (código curto)
+      exemplos:
+        - D
+    prazo_tipo:
+      Tipo de contagem do prazo (código)
+      exemplos:
+        - F
+        - D
+    reclamacoes:
+      Quantidade de reclamações associadas (integer)
+      exemplos:
+        - 0
+        - 1
+        - 2
+    justificativa_status:
+      Texto livre com justificativa do status (string; altamente variável)
